@@ -20,10 +20,20 @@ form.addEventListener("submit", function(e){
 
   .then(function(){
 
-    document.getElementById("message").innerHTML =
-      "✅ ¡Suscrito correctamente! Revisa tu correo 📩 (ve a bandeja de entrada o spam)";
+    const msg = document.getElementById("message");
 
-    document.getElementById("message").style.color = "#22c55e";
+    msg.innerHTML = `
+      ✔ Registrado correctamente <br>
+      📩 Revisa tu correo o bandeja de spam
+    `;
+
+    msg.style.background = "#22c55e";
+    msg.style.color = "white";
+    msg.style.padding = "15px 20px";
+    msg.style.borderRadius = "12px";
+    msg.style.marginTop = "20px";
+    msg.style.fontWeight = "700";
+    msg.style.boxShadow = "0 10px 25px rgba(0,0,0,.2)";
 
     form.reset();
 
@@ -31,10 +41,16 @@ form.addEventListener("submit", function(e){
 
   .catch(function(error){
 
-    document.getElementById("message").innerHTML =
-      "❌ Error al enviar. Intenta nuevamente";
+    const msg = document.getElementById("message");
 
-    document.getElementById("message").style.color = "#ef4444";
+    msg.innerHTML = "❌ Error al enviar. Intenta nuevamente";
+
+    msg.style.background = "#ef4444";
+    msg.style.color = "white";
+    msg.style.padding = "15px 20px";
+    msg.style.borderRadius = "12px";
+    msg.style.marginTop = "20px";
+    msg.style.fontWeight = "700";
 
     console.log(error);
 
