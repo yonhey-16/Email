@@ -11,350 +11,17 @@
   <!-- EMAIL JS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      font-family:'Poppins',sans-serif;
-      background:#020617;
-      overflow-x:hidden;
-      color:white;
-    }
-
-    /* BACKGROUND */
-
-    .hero{
-      min-height:100vh;
-      position:relative;
-      overflow:hidden;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding:40px 20px;
-      background:
-      radial-gradient(circle at top left,#2563eb55,transparent 30%),
-      radial-gradient(circle at bottom right,#7c3aed55,transparent 30%),
-      linear-gradient(135deg,#020617,#0f172a,#111827);
-    }
-
-    /* GRID */
-
-    .grid{
-      position:absolute;
-      width:100%;
-      height:100%;
-      background-image:
-      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-      background-size:50px 50px;
-      animation:gridMove 15s linear infinite;
-    }
-
-    @keyframes gridMove{
-      from{
-        transform:translateY(0);
-      }
-      to{
-        transform:translateY(50px);
-      }
-    }
-
-    /* GLOW */
-
-    .glow{
-      position:absolute;
-      border-radius:50%;
-      filter:blur(120px);
-      opacity:.35;
-      animation:float 6s ease-in-out infinite;
-    }
-
-    .glow1{
-      width:350px;
-      height:350px;
-      background:#3b82f6;
-      top:-100px;
-      left:-100px;
-    }
-
-    .glow2{
-      width:300px;
-      height:300px;
-      background:#9333ea;
-      bottom:-100px;
-      right:-100px;
-      animation-delay:2s;
-    }
-
-    @keyframes float{
-      0%{
-        transform:translateY(0px);
-      }
-      50%{
-        transform:translateY(30px);
-      }
-      100%{
-        transform:translateY(0px);
-      }
-    }
-
-    /* CARD */
-
-    .container{
-      position:relative;
-      z-index:10;
-      width:100%;
-      max-width:900px;
-      padding:70px 50px;
-      border-radius:35px;
-      background:rgba(255,255,255,.08);
-      backdrop-filter:blur(20px);
-      border:1px solid rgba(255,255,255,.1);
-      box-shadow:
-      0 0 50px rgba(59,130,246,.15),
-      0 25px 80px rgba(0,0,0,.5);
-      text-align:center;
-      animation:fadeUp 1.2s ease;
-    }
-
-    @keyframes fadeUp{
-      from{
-        opacity:0;
-        transform:translateY(40px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-
-    /* BADGE */
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      background:rgba(59,130,246,.12);
-      border:1px solid rgba(96,165,250,.3);
-      color:#93c5fd;
-      padding:12px 24px;
-      border-radius:999px;
-      font-size:14px;
-      font-weight:600;
-      margin-bottom:30px;
-      animation:pulse 2s infinite;
-    }
-
-    @keyframes pulse{
-      0%{
-        box-shadow:0 0 0 0 rgba(59,130,246,.4);
-      }
-      70%{
-        box-shadow:0 0 0 15px rgba(59,130,246,0);
-      }
-      100%{
-        box-shadow:0 0 0 0 rgba(59,130,246,0);
-      }
-    }
-
-    /* TITLE */
-
-    h1{
-      font-size:82px;
-      line-height:.95;
-      font-weight:800;
-      margin-bottom:30px;
-      letter-spacing:-4px;
-    }
-
-    h1 span{
-      background:linear-gradient(90deg,#60a5fa,#a855f7);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    /* TEXT */
-
-    .description{
-      max-width:700px;
-      margin:auto;
-      font-size:21px;
-      line-height:1.8;
-      color:#cbd5e1;
-      margin-bottom:45px;
-    }
-
-    /* FORM */
-
-    form{
-      display:flex;
-      justify-content:center;
-      gap:15px;
-      flex-wrap:wrap;
-      margin-bottom:50px;
-    }
-
-    /* INPUT */
-
-    input{
-      flex:1;
-      min-width:280px;
-      max-width:450px;
-      padding:22px;
-      border:none;
-      border-radius:18px;
-      background:rgba(255,255,255,.12);
-      backdrop-filter:blur(10px);
-      color:white;
-      font-size:16px;
-      border:1px solid rgba(255,255,255,.1);
-      outline:none;
-      transition:.3s;
-    }
-
-    input:focus{
-      border-color:#60a5fa;
-      box-shadow:0 0 25px rgba(96,165,250,.35);
-    }
-
-    input::placeholder{
-      color:#cbd5e1;
-    }
-
-    /* BUTTON */
-
-    button{
-      padding:22px 38px;
-      border:none;
-      border-radius:18px;
-      background:linear-gradient(90deg,#2563eb,#7c3aed);
-      color:white;
-      font-size:16px;
-      font-weight:700;
-      cursor:pointer;
-      transition:.4s;
-      position:relative;
-      overflow:hidden;
-    }
-
-    button::before{
-      content:"";
-      position:absolute;
-      top:0;
-      left:-100%;
-      width:100%;
-      height:100%;
-      background:rgba(255,255,255,.2);
-      transition:.5s;
-    }
-
-    button:hover::before{
-      left:100%;
-    }
-
-    button:hover{
-      transform:translateY(-4px) scale(1.03);
-      box-shadow:0 15px 35px rgba(37,99,235,.45);
-    }
-
-    /* MESSAGE */
-
-    #message{
-      color:#93c5fd;
-      font-weight:600;
-      margin-top:15px;
-    }
-
-    /* STATS */
-
-    .stats{
-      display:flex;
-      justify-content:center;
-      gap:70px;
-      flex-wrap:wrap;
-      margin-top:20px;
-    }
-
-    .stat{
-      animation:floatCard 5s ease-in-out infinite;
-    }
-
-    .stat:nth-child(2){
-      animation-delay:1s;
-    }
-
-    .stat:nth-child(3){
-      animation-delay:2s;
-    }
-
-    @keyframes floatCard{
-      0%{
-        transform:translateY(0px);
-      }
-      50%{
-        transform:translateY(-12px);
-      }
-      100%{
-        transform:translateY(0px);
-      }
-    }
-
-    .stat h2{
-      font-size:52px;
-      background:linear-gradient(90deg,#60a5fa,#a855f7);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      margin-bottom:10px;
-    }
-
-    .stat span{
-      color:#cbd5e1;
-      font-size:16px;
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:768px){
-
-      .container{
-        padding:50px 25px;
-      }
-
-      h1{
-        font-size:52px;
-      }
-
-      .description{
-        font-size:17px;
-      }
-
-      .stats{
-        gap:35px;
-      }
-
-      .stat h2{
-        font-size:38px;
-      }
-
-      button{
-        width:100%;
-      }
-
-    }
-
-  </style>
 
 </head>
 
 <body>
+
+  <!-- HERO -->
 
   <section class="hero">
 
@@ -398,7 +65,7 @@
 
       </form>
 
-      <!-- MESSAGE -->
+      <!-- MENSAJE -->
 
       <p id="message"></p>
 
@@ -427,9 +94,151 @@
 
   </section>
 
+  <!-- GALERIA -->
+
+  <section class="gallery">
+
+    <div class="gallery-title">
+
+      <h2>Interfaces Modernas</h2>
+
+      <p>
+        Inspírate con diseños futuristas y experiencias digitales premium.
+      </p>
+
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+      <div class="gallery-card">
+        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CARDS -->
+
+  <section class="features">
+
+    <h2>¿Qué aprenderás?</h2>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+
+        <h3>UI Design</h3>
+
+        <p>
+          Diseña interfaces modernas con estilos profesionales.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png">
+
+        <h3>UX Research</h3>
+
+        <p>
+          Aprende investigación de usuarios y experiencia digital.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/1006/1006363.png">
+
+        <h3>Prototipado</h3>
+
+        <p>
+          Crea prototipos interactivos con herramientas modernas.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <div class="footer-brand">
+
+        <h2>UXLaunch Academy</h2>
+
+        <p>
+          Aprende diseño UX/UI y domina las herramientas digitales
+          más utilizadas del mundo.
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3>Academia</h3>
+
+        <a href="#">Cursos</a>
+        <a href="#">Mentorías</a>
+        <a href="#">Comunidad</a>
+        <a href="#">Proyectos</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h3>Herramientas</h3>
+
+        <a href="#">Figma</a>
+        <a href="#">Framer</a>
+        <a href="#">Adobe XD</a>
+        <a href="#">Web Design</a>
+
+      </div>
+
+      <div class="footer-images">
+
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+
+        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1200&auto=format&fit=crop">
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+
+      © 2026 UXLaunch Academy · Todos los derechos reservados
+
+    </div>
+
+  </footer>
+
   <!-- SCRIPT -->
 
   <script src="script.js"></script>
 
 </body>
+
 </html>
