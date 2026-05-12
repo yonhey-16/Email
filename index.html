@@ -1,72 +1,51 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dulce Atelier | Pastelería Artesanal</title>
+  <title>UXLaunch Academy</title>
 
   <link rel="stylesheet" href="style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <h2>🍰 Dulce Atelier</h2>
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Sabores</a>
-      <a href="#">Nosotros</a>
-      <a href="#">Contacto</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
   <section class="hero">
 
-    <div class="container">
+```
+<div class="container">
 
-      <h1>Pastelería artesanal hecha con amor</h1>
+  <h1>Domina el Diseño UX/UI</h1>
 
-      <p>
-        Suscríbete y recibe descuentos exclusivos, nuevas recetas y lanzamientos de postres gourmet directamente en tu correo.
-      </p>
+  <p>
+    Recibe recursos premium, tips y clases gratuitas directamente en tu correo.
+  </p>
 
-      <!-- BENEFICIOS -->
-      <div class="benefits">
-        <div>🎂 Recetas exclusivas</div>
-        <div>🍓 Descuentos especiales</div>
-        <div>☕ Nuevos productos antes que nadie</div>
-      </div>
+  <form id="subscribe-form">
 
-      <!-- FORMULARIO (NO TOCADO) -->
-      <form id="subscribe-form">
+    <input 
+      type="email" 
+      id="email"
+      placeholder="Ingresa tu email"
+      required
+    >
 
-        <input 
-          type="email" 
-          id="email"
-          placeholder="Ingresa tu email"
-          required
-        >
+    <button type="submit">
+      SUSCRIBIRME
+    </button>
 
-        <button type="submit">
-          QUIERO MIS BENEFICIOS 🍰
-        </button>
+  </form>
 
-      </form>
+  <p id="message"></p>
 
-      <p id="message"></p>
-
-    </div>
+</div>
+```
 
   </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 Dulce Atelier - Pastelería artesanal premium</p>
-  </footer>
 
   <script src="script.js"></script>
 
