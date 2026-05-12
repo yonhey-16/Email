@@ -1,14 +1,220 @@
 <!DOCTYPE html>
-
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>UXLaunch Academy</title>
 
-  <link rel="stylesheet" href="style.css">
-
+  <!-- EMAIL JS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f172a;
+      overflow-x:hidden;
+      color:white;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
+      url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:40px 20px;
+      position:relative;
+    }
+
+    /* EFECTO */
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:#3b82f6;
+      filter:blur(180px);
+      opacity:.25;
+      top:-100px;
+      right:-100px;
+    }
+
+    /* CARD */
+
+    .container{
+      position:relative;
+      z-index:2;
+      width:100%;
+      max-width:750px;
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:30px;
+      padding:70px 50px;
+      text-align:center;
+      box-shadow:0 20px 60px rgba(0,0,0,.4);
+    }
+
+    /* BADGE */
+
+    .badge{
+      display:inline-block;
+      background:rgba(59,130,246,.18);
+      color:#93c5fd;
+      padding:10px 22px;
+      border-radius:40px;
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:25px;
+      border:1px solid rgba(147,197,253,.3);
+    }
+
+    /* TITULO */
+
+    h1{
+      font-size:72px;
+      line-height:1;
+      font-weight:800;
+      margin-bottom:25px;
+      letter-spacing:-3px;
+    }
+
+    h1 span{
+      color:#60a5fa;
+    }
+
+    /* TEXTO */
+
+    p{
+      font-size:20px;
+      line-height:1.8;
+      color:#d1d5db;
+      max-width:620px;
+      margin:auto;
+      margin-bottom:40px;
+    }
+
+    /* FORM */
+
+    form{
+      width:100%;
+      display:flex;
+      gap:15px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    /* INPUT */
+
+    input{
+      flex:1;
+      min-width:280px;
+      padding:20px;
+      border:none;
+      border-radius:16px;
+      background:white;
+      font-size:16px;
+      outline:none;
+      color:#111827;
+    }
+
+    /* BOTON */
+
+    button{
+      padding:20px 35px;
+      border:none;
+      border-radius:16px;
+      background:#3b82f6;
+      color:white;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.3s;
+      box-shadow:0 10px 25px rgba(59,130,246,.4);
+    }
+
+    button:hover{
+      transform:translateY(-3px);
+      background:#2563eb;
+    }
+
+    /* MESSAGE */
+
+    #message{
+      margin-top:25px;
+      font-size:15px;
+      font-weight:600;
+      color:#93c5fd;
+    }
+
+    /* STATS */
+
+    .stats{
+      display:flex;
+      justify-content:center;
+      gap:50px;
+      margin-top:55px;
+      flex-wrap:wrap;
+    }
+
+    .stat h2{
+      font-size:40px;
+      color:#60a5fa;
+      margin-bottom:8px;
+    }
+
+    .stat span{
+      color:#cbd5e1;
+      font-size:15px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .container{
+        padding:50px 25px;
+      }
+
+      h1{
+        font-size:48px;
+      }
+
+      p{
+        font-size:17px;
+      }
+
+      .stats{
+        gap:30px;
+      }
+
+      .stat h2{
+        font-size:30px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -16,36 +222,68 @@
 
   <section class="hero">
 
-```
-<div class="container">
+    <div class="container">
 
-  <h1>Domina el Diseño UX/UI</h1>
+      <div class="badge">
+        🚀 Academia UX/UI Premium
+      </div>
 
-  <p>
-    Recibe recursos premium, tips y clases gratuitas directamente en tu correo.
-  </p>
+      <h1>
+        Domina el <span>Diseño UX/UI</span>
+      </h1>
 
-  <form id="subscribe-form">
+      <p>
+        Aprende diseño moderno, experiencia de usuario y herramientas profesionales 
+        con recursos premium, clases gratuitas y contenido exclusivo directamente en tu correo.
+      </p>
 
-    <input 
-      type="email" 
-      id="email"
-      placeholder="Ingresa tu email"
-      required
-    >
+      <!-- FORMULARIO -->
 
-    <button type="submit">
-      SUSCRIBIRME
-    </button>
+      <form id="subscribe-form">
 
-  </form>
+        <input
+          type="email"
+          id="email"
+          placeholder="Ingresa tu email"
+          required
+        >
 
-  <p id="message"></p>
+        <button type="submit">
+          SUSCRIBIRME
+        </button>
 
-</div>
-```
+      </form>
+
+      <!-- MENSAJE -->
+
+      <p id="message"></p>
+
+      <!-- STATS -->
+
+      <div class="stats">
+
+        <div class="stat">
+          <h2>+12K</h2>
+          <span>Estudiantes</span>
+        </div>
+
+        <div class="stat">
+          <h2>+350</h2>
+          <span>Recursos Premium</span>
+        </div>
+
+        <div class="stat">
+          <h2>98%</h2>
+          <span>Satisfacción</span>
+        </div>
+
+      </div>
+
+    </div>
 
   </section>
+
+  <!-- SCRIPT -->
 
   <script src="script.js"></script>
 
