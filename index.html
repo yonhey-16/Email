@@ -1,53 +1,166 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UXLaunch Academy</title>
+  <title>AutoExpo - Carros Usados</title>
 
   <link rel="stylesheet" href="style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 </head>
 
 <body>
 
-  <section class="hero">
+  <!-- NAVBAR -->
 
-```
-<div class="container">
+  <header class="navbar">
 
-  <h1>Domina el Diseño UX/UI</h1>
+    <div class="logo">
+      AUTOEXPO
+    </div>
 
-  <p>
-    Recibe recursos premium, tips y clases gratuitas directamente en tu correo.
-  </p>
+    <nav>
 
-  <form id="subscribe-form">
+      <a href="#">Catálogo</a>
+      <a href="#">Vende/Cambia</a>
+      <a href="#">Financiación</a>
+      <a href="#">Nosotros</a>
 
-    <input 
-      type="email" 
-      id="email"
-      placeholder="Ingresa tu email"
-      required
-    >
+    </nav>
 
-    <button type="submit">
-      SUSCRIBIRME
+    <button class="pay-btn">
+      PAGOS EN LÍNEA
     </button>
 
-  </form>
+  </header>
 
-  <p id="message"></p>
+  <!-- MAIN -->
 
-</div>
-```
+  <main class="main-container">
 
-  </section>
+    <!-- LEFT -->
 
-  <script src="script.js"></script>
+    <section class="cars-section">
+
+      <h1>148 Carros Usados</h1>
+
+      <!-- CARD -->
+
+      <div class="car-card">
+
+        <img 
+          src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=1200&auto=format&fit=crop"
+          alt="Carro"
+        >
+
+        <div class="car-info">
+
+          <h2>Mini Cooper E Classic HB 2025</h2>
+
+          <div class="details">
+            <span>2025</span>
+            <span>1.520km</span>
+            <span>Automático</span>
+            <span>Eléctrico</span>
+          </div>
+
+          <p class="location">
+            Bogotá, Colombia
+          </p>
+
+        </div>
+
+        <div class="price">
+          $145.800.000
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="car-card">
+
+        <img 
+          src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop"
+          alt="Carro"
+        >
+
+        <div class="car-info">
+
+          <h2>Volkswagen Polo Comfortline 2026</h2>
+
+          <div class="details">
+            <span>2026</span>
+            <span>3.046km</span>
+            <span>Secuencial</span>
+            <span>Gasolina</span>
+          </div>
+
+          <p class="location">
+            Bogotá, Colombia
+          </p>
+
+        </div>
+
+        <div class="price">
+          $70.800.000
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="car-card">
+
+        <img 
+          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop"
+          alt="Carro"
+        >
+
+        <div class="car-info">
+
+          <h2>Fiat Pulse Turbo Sec 2025</h2>
+
+          <div class="details">
+            <span>2025</span>
+            <span>9.004km</span>
+            <span>Secuencial</span>
+            <span>Gasolina</span>
+          </div>
+
+          <p class="location">
+            Bogotá, Colombia
+          </p>
+
+        </div>
+
+        <div class="price">
+          $83.800.000
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- RIGHT SIDEBAR -->
+
+    <aside class="sidebar">
+
+      <h2>¿Necesitas un crédito?</h2>
+
+      <p>
+        Nosotros te ayudamos a conseguirlo. 
+        No pierdas tiempo aplicando banco por banco.
+      </p>
+
+      <button>
+        Contáctanos
+      </button>
+
+    </aside>
+
+  </main>
 
 </body>
 </html>
