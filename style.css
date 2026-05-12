@@ -4,6 +4,38 @@ padding:0;
 box-sizing:border-box;
 }
 
+.hero-content h1{
+background: linear-gradient(90deg,#fff,#ffd1dc,#fff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation: glow 4s infinite alternate;
+}
+
+@keyframes glow{
+from{filter:drop-shadow(0 0 10px rgba(255,105,135,0.3));}
+to{filter:drop-shadow(0 0 25px rgba(255,105,135,0.6));}
+}
+h1, h2, h3{
+font-family:'Playfair Display', serif;
+}
+
+p, button, input, a{
+font-family:'Poppins', sans-serif;
+}
+
+.hero{
+        height:100vh;
+        background-image:url('https://images.unsplash.com/photo-1551024601-bec78aea704b');
+        background-size:cover;
+        background-position:center;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        padding:20px;
+        position:relative;
+        }
+
 body{
 font-family:Arial, sans-serif;
 background:#0f172a;
@@ -74,3 +106,5 @@ font-size:38px;
 }
 
 }
+
+
