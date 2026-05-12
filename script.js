@@ -1,4 +1,4 @@
-emailjs.init("YOUR_PUBLIC_KEY");
+emailjs.init("a1_OH6bM2YXlMTh87");
 
 const form = document.getElementById("subscribe-form");
 
@@ -13,8 +13,8 @@ user_email: email
 };
 
 emailjs.send(
-"YOUR_SERVICE_ID",
-"YOUR_TEMPLATE_ID",
+"service_u475znp",
+"template_qci7qc5",
 params
 )
 
@@ -33,7 +33,7 @@ form.reset();
 
 ```
 document.getElementById("message").innerHTML =
-  "❌ Error al enviar.";
+  "❌ Error al enviar";
 
 console.log(error);
 ```
