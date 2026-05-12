@@ -4,40 +4,40 @@ const form = document.getElementById("subscribe-form");
 
 form.addEventListener("submit", function(e){
 
-e.preventDefault();
+  e.preventDefault();
 
-const email = document.getElementById("email").value;
+  const email = document.getElementById("email").value;
 
-const params = {
-user_email: email
-};
+  const params = {
+    user_email: email
+  };
 
-emailjs.send(
-"service_u475znp",
-"template_qci7qc5",
-params
-)
+  emailjs.send(
+    "service_u475znp",
+    "template_qci7qc5",
+    params
+  )
 
-.then(function(){
+  .then(function(){
 
-```
-document.getElementById("message").innerHTML =
-  "✅ Suscripción exitosa. Revisa tu correo.";
+    document.getElementById("message").innerHTML =
+      "✅ ¡Suscrito correctamente! Revisa tu correo 📩 (ve a bandeja de entrada o spam)";
 
-form.reset();
-```
+    document.getElementById("message").style.color = "#22c55e";
 
-})
+    form.reset();
 
-.catch(function(error){
+  })
 
-```
-document.getElementById("message").innerHTML =
-  "❌ Error al enviar";
+  .catch(function(error){
 
-console.log(error);
-```
+    document.getElementById("message").innerHTML =
+      "❌ Error al enviar. Intenta nuevamente";
 
-});
+    document.getElementById("message").style.color = "#ef4444";
+
+    console.log(error);
+
+  });
 
 });
